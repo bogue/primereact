@@ -103,6 +103,12 @@ export const Menu = React.memo(
             }
         };
 
+        const onItemMouseEnter = (key) => {
+          if (props.popup && focusedOptionIndex !== key) {
+            setFocusedOptionIndex(key);
+          }
+        }
+
         const onListFocus = (event) => {
             setFocused(true);
 
@@ -361,6 +367,7 @@ export const Menu = React.memo(
                 {
                     onClick: (event) => onItemClick(event, item, key),
                     onMouseMove: (event) => onItemMouseMove(event, key),
+                    onMouseEnter: (event) => onItemMouseEnter(key),
                     className: cx('content')
                 },
                 getMenuItemPTOptions('content', menuContext)
