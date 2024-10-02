@@ -395,7 +395,9 @@ export const Menu = React.memo(
                     labelClassName: 'p-menuitem-text',
                     iconClassName,
                     element: content,
-                    props
+                    props,
+                    actionProps,
+                    contentProps
                 };
 
                 content = ObjectUtils.getJSXElement(item.template, item, defaultContentOptions);
